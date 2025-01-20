@@ -5,8 +5,8 @@ import { NodeInfo, UrlMatch } from "./types";
  * Returns a node's URL(s)
  */
 export function *findUrls(info: NodeInfo, options: NormalizedOptions): IterableIterator<UrlMatch> {
-  let { selectors, extractors } = options;
-  let { node } = info;
+  const { selectors, extractors } = options;
+  const { node } = info;
   let i, j, selector, property, extractor, urls, url;
 
   // Using an old-fashined for-loop for speed, since this function is called for every single node

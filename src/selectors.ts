@@ -35,13 +35,13 @@ export const defaultSelectors: UrlSelector[] = [
  * Creates a `UrlSelector` from a CSS attribute selector
  */
 export function createUrlSelector(selector: string): UrlSelector {
-  let match = cssSelectorPattern.exec(selector);
+  const match = cssSelectorPattern.exec(selector);
   if (!match) {
     throw new Error(`Invalid or unsupported CSS selector: ${selector}`);
   }
 
-  let tagName = match[1].toLowerCase();
-  let propertyName = match[2].toLowerCase();
+  const tagName = match[1].toLowerCase();
+  const propertyName = match[2].toLowerCase();
 
   return { tagName, propertyName };
 }

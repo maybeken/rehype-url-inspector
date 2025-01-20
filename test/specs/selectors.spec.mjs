@@ -1,9 +1,8 @@
-"use strict";
-
-const process = require("../utils/process");
-const compare = require("../utils/compare");
-const sinon = require("sinon");
-const { expect } = require("chai");
+import process from "../utils/process.mjs";
+import compare from "../utils/compare.mjs";
+import sinon from "sinon";
+import { expect } from "chai";
+import { describe, it } from "mocha";
 
 describe("options.selectors", () => {
 

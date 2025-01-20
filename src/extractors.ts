@@ -36,11 +36,12 @@ function jsonUrls({ node }: NodeInfo): string[] | undefined {
     && node.children.length === 1                   // Must only have a single child
     && node.children[0].type === "text"             // The child must be a text node
   ) {
-    let json = node.children[0].value as string;
-    let match, urls = [];
+    const json = node.children[0].data as string;
+    const urls = [];
+    let match;
 
     while ((match = urlsPattern.exec(json)) !== null) {
-      let url = match[0];
+      const url = match[0];
       urls.push(url);
     }
 
@@ -65,11 +66,12 @@ function styleUrls({ node }: NodeInfo): string[] | undefined {
     && node.children.length === 1                   // Must only have a single child
     && node.children[0].type === "text"             // The child must be a text node
   ) {
-    let css = node.children[0].value as string;
-    let match, urls = [];
+    const css = node.children[0].data as string;
+    const urls = [];
+    let match;
 
     while ((match = cssUrlPattern.exec(css)) !== null) {
-      let url = match[1];
+      const url = match[1];
       urls.push(url);
     }
 

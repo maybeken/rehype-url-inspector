@@ -1,13 +1,9 @@
-"use strict";
-
-const { expect } = require("chai");
-
-module.exports = compare;
+import { expect } from 'chai';
 
 /**
  * Compares actual UrlMatch objects to expected values, and throws an error that's easy to visally diff.
  */
-function compare (matches, urls) {
+export default function compare (matches, urls) {
   matches = matches.map(({ node, propertyName, url }) =>
     ({ tag: node.tagName, prop: propertyName, url })
   );
